@@ -176,7 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/favorite_button" />
 
-    <LinearLayout
+    <TextView
         android:id="@+id/no_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -185,24 +185,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:text="@string/not_found"
+        android:textSize="12sp"
+        app:drawableTopCompat="@drawable/baseline_error_outline_24"
+        app:drawableTint="@android:color/darker_gray" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/not_found"
-            android:src="@drawable/baseline_error_outline_24"
-            android:tint="@android:color/darker_gray"
-            tools:ignore="UseAppTint" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/not_found"
-            android:textSize="12dp" />
-
-    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressbar"

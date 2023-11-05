@@ -1,5 +1,6 @@
 package com.fahmiproduction.githubappcleanarch.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
     private var listData = ArrayList<User>()
     var onItemClick: ((User) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<User>?) {
         if (newListData == null) return
         listData.clear()
