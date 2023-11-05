@@ -7,6 +7,8 @@ import com.fahmiproduction.githubappcleanarch.core.data.source.local.room.UserDa
 import com.fahmiproduction.githubappcleanarch.core.data.source.remote.RemoteDataSource
 import com.fahmiproduction.githubappcleanarch.core.data.source.remote.network.ApiService
 import com.fahmiproduction.githubappcleanarch.core.domain.repository.IUserRepository
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -18,10 +20,12 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<UserDatabase>().userDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("fahmiproduction".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             UserDatabase::class.java, "User.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration().openHelperFactory(factory).build()
     }
 }
 

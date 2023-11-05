@@ -89,5 +89,3 @@ public *;
 -keep class com.fahmiproduction.githubappcleanarch.favorite.FavoriteFragment { public *; }
 -keep class kotlin.**
 -keep class com.fahmiproduction.githubappcleanarch.core.data.source.remote.response.UserResponse
-#
-#-keep class * extends androidx.room.RoomDatabase
