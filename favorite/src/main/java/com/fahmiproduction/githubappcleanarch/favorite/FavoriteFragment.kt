@@ -34,8 +34,8 @@ class FavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val activity = requireActivity() as AppCompatActivity
-        activity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+//        val activity = requireActivity() as AppCompatActivity
+//        activity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val userAdapter = ListUserAdapter()
         userAdapter.onItemClick = { selectedData ->
