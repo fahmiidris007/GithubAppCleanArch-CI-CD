@@ -1,5 +1,6 @@
 package com.fahmiproduction.githubappcleanarch.core.data.source.local.entity
 
+import android.annotation.SuppressLint
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -8,6 +9,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user")
 data class UserEntity(
+    @SuppressLint("KotlinNullnessAnnotation")
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "login")
